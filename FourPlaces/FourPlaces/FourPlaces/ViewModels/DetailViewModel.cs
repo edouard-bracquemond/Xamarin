@@ -58,8 +58,8 @@ namespace FourPlaces.ViewModels
             Comments = new List<CommentItem>(placeS.Comments);
             
                 position = new Position(Latitude, Longitude);
-          
-            Map = new Map(MapSpan.FromCenterAndRadius(position,Distance.FromKilometers(0.5)));
+            Map = new Map();
+            Map.MoveToRegion(MapSpan.FromCenterAndRadius(position,Distance.FromKilometers(150)));
            
             var pin = new Pin
             {

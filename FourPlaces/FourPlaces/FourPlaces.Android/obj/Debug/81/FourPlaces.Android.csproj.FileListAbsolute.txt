@@ -247,3 +247,8 @@ C:\Users\vbje\source\repos\Xamarin\FourPlaces\FourPlaces\FourPlaces.Android\obj\
 C:\Users\vbje\source\repos\Xamarin\FourPlaces\FourPlaces\FourPlaces.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\vbje\source\repos\Xamarin\FourPlaces\FourPlaces\FourPlaces.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\vbje\source\repos\Xamarin\FourPlaces\FourPlaces\FourPlaces.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\vbje\source\repos\Xamarin\FourPlaces\FourPlaces\FourPlaces.Android\obj\Debug\81\linksrc\FourPlaces.dll.mdb
+C:\Users\vbje\source\repos\Xamarin\FourPlaces\FourPlaces\FourPlaces.Android\obj\Debug\81\linksrc\Plugin.Connectivity.dll.mdb
+C:\Users\vbje\source\repos\Xamarin\FourPlaces\FourPlaces\FourPlaces.Android\obj\Debug\81\linksrc\Plugin.Permissions.dll.mdb
+C:\Users\vbje\source\repos\Xamarin\FourPlaces\FourPlaces\FourPlaces.Android\obj\Debug\81\linksrc\Plugin.Settings.Abstractions.dll.mdb
+C:\Users\vbje\source\repos\Xamarin\FourPlaces\FourPlaces\FourPlaces.Android\obj\Debug\81\linksrc\Plugin.Settings.dll.mdb

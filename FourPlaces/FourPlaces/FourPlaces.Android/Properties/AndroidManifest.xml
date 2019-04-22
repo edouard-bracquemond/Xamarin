@@ -4,11 +4,23 @@
   <uses-permission  android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <meta-data android:name="com.google.android.maps.v2.API_KEY"
-android:value="AIzaSyCXYS66CYu-07YMl81B8iAYzkiCP-BQSjw"/>
+
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.LOCATION_HARDWARE" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
   <uses-feature android:name="android.hardware.camera"
                    android:required="true" />
 	<application android:label="FourPlaces.Android">
+
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyA3JX-oPVK72Pipa9AxoHMdR5O5MCXojlA" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+
+
     <provider android:name="android.support.v4.content.FileProvider"
           android:authorities="${applicationId}.fileprovider"
           android:exported="false"
@@ -16,6 +28,10 @@ android:value="AIzaSyCXYS66CYu-07YMl81B8iAYzkiCP-BQSjw"/>
 
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
                        android:resource="@xml/file_paths"></meta-data>
+     
+      <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyA3JX-oPVK72Pipa9AxoHMdR5O5MCXojlA" />
+     
+
     </provider>
   </application>
 </manifest>

@@ -20,6 +20,7 @@ namespace FourPlaces.Droid
             
 
             base.OnCreate(savedInstanceState);
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
             //FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             TabLayoutResource = Resource.Layout.Tabbar;
