@@ -17,7 +17,7 @@ namespace FourPlaces
 		public PlaceAddPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new PlaceAddViewModel();
+            BindingContext = new PlaceAddViewModel(Navigation);
         }
 	}
 }

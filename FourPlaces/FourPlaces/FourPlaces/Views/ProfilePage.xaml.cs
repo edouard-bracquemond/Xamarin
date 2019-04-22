@@ -16,18 +16,11 @@ namespace FourPlaces {
 		public ProfilePage ()
 		{
 			InitializeComponent ();
-            BindingContext = new ProfileViewModel();
+            BindingContext = new ProfileViewModel(Navigation);
         }
 
-        private async void ProfileEditClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ProfileEditPage());
-        }
-
-        private async void PasswordEditClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new PasswordEditPage());
-        }
+        
+      
 
     }
 }

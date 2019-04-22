@@ -2,7 +2,7 @@ using System;
 using Newtonsoft.Json;
 
 
-namespace TD.Api.Dtos
+namespace FourPlaces.Models
 {
 	public class CommentItem
 	{

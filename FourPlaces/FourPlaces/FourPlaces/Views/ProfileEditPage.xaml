@@ -9,10 +9,49 @@
                       x:DataType="vm:ProfileEditViewModel"
                       Title="{StaticResource title}"
                       >
-    <StackLayout Orientation="Vertical">
-        <Label Text="Lieux"
-            HorizontalOptions="CenterAndExpand" 
-            Margin="0,30"
-            FontSize="24"/>
-    </StackLayout>
+    
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
+          
+
+            <Label Text="Nom"
+                   FontSize="18"
+                   Margin="8"/>
+            <Entry Text="{Binding LastName}"
+                  
+                    Margin="8"/>
+            <Label Text="Prénom"
+                   FontSize="18"
+                   Margin="8"/>
+            <Entry Text="{Binding FirstName}"
+                    
+                    Margin="8"/>
+            <Label Text="Photo de profil"
+                   FontSize="18"
+                   Margin="8"/>
+
+
+            <Image Source="{Binding ImageURL}"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10,0"/>
+
+            <Button Text="Prendre une photo"
+                    Command="{Binding TakeClicked}"
+                    Margin="8"
+                />
+            <Button Text="Choisir une image"
+                Command="{Binding PickClicked}"
+                Margin="8"
+               />
+            <Label Text="{Binding Error}"
+               TextColor="Red"
+               FontSize="18"
+               Margin="8"/>
+            <Button Text="Valider"
+                    Command="{Binding OkClicked}"
+                    Margin="8"
+                    />
+        </StackLayout>
+    </ScrollView>
+
 </mvvm:BaseContentPage>

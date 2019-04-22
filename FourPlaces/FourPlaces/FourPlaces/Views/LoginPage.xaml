@@ -11,7 +11,7 @@
                       >
 
 
-
+    <ScrollView>
     <StackLayout Orientation="Vertical" >
 
         <Label Text="Email"
@@ -25,8 +25,11 @@
                    Margin="8"/>
         <Entry Text="{Binding Password}"
                     Placeholder="password"
+                    IsPassword="True"
+                    
                     Margin="8"/>
         <Label Text="{Binding Error}"
+                   
                    TextColor="Red"
                    FontSize="18"
                    Margin="8"/>
@@ -38,4 +41,5 @@
                 Command="{Binding RegisterClicked}"
                 Margin="10,0"/>
     </StackLayout>
+    </ScrollView>
 </mvvm:BaseContentPage>

@@ -1,4 +1,5 @@
-﻿using Storm.Mvvm;
+﻿using Plugin.Media.Abstractions;
+using Storm.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,15 +15,19 @@ namespace FourPlaces.ViewModels
         private string _firstName="";
         private string _lastName="";
         private string _password="";
+        private int? _imageId = null;
         private string _error;
         public ICommand RegistrationClicked { get; set; }
-
-        public INavigation navigation { get; set; }
-
+        public ICommand PickClicked { get; set; }
+        public ICommand TakeClicked { get; set; }
+        public INavigation Navigation { get; set; }
+        private MediaFile file = null;
         public RegisterViewModel(INavigation navigation)
         {
-            this.navigation = navigation;
+            this.Navigation = navigation;
             this.RegistrationClicked = new Command(async () => await Registration());
+            this.PickClicked = new Command(async () => await Pick());
+            this.TakeClicked = new Command(async () => await Take());
         }
 
         public string Email
@@ -30,7 +35,11 @@ namespace FourPlaces.ViewModels
             get => _email;
             set => SetProperty(ref _email, value);
         }
-
+        public int? ImageId
+        {
+            get => _imageId;
+            set => SetProperty(ref _imageId, value);
+        }
         public string FirstName
         {
             get => _firstName;
@@ -54,7 +63,14 @@ namespace FourPlaces.ViewModels
             get => _error;
             set => SetProperty(ref _error, value);
         }
-       
+        public async Task Pick()
+        {
+            file = await Service.PickPhotoService(true);
+        }
+        public async Task Take()
+        {
+            file = await Service.TakePhotoService(true);
+        }
         public async Task Registration()
         {
             Error = "";
@@ -65,7 +81,23 @@ namespace FourPlaces.ViewModels
             else{
                 if (await Service.RegistrationService(Email, Password, LastName, FirstName))
                 {
-                    await navigation.PushAsync(new HomePage());
+                    if (file != null)
+                    {
+                        this.ImageId = await Service.UploadImageService(file);
+                        Console.WriteLine(ImageId + "   _____________________________________________________________________________>");
+                        if (await Service.UpdateProfileService(FirstName, LastName, ImageId))
+                        {
+                            await Navigation.PushAsync(new HomePage());
+                        }
+                        else
+                        {
+                            Error = "Problème avec l'image ";
+                        }
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new HomePage());
+                    }
                 }
                 else
                 {

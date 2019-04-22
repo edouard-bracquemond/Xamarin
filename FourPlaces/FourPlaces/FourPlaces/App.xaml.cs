@@ -1,7 +1,11 @@
 ﻿
+//using FFImageLoading.Forms;
 using MonkeyCache.SQLite;
+using Storm.Mvvm.Services;
 using System;
+using System.Reflection;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -13,9 +17,16 @@ namespace FourPlaces
         {
             InitializeComponent();
             Barrel.ApplicationId = "FourPlaces";
-            MainPage = new NavigationPage(new LoginPage());
-        }
 
+            
+
+            MainPage = new NavigationPage(new LoginPage());
+            
+          
+        
+    }
+
+        
         protected override void OnStart()
         {
             // Handle when your app starts
@@ -30,5 +41,6 @@ namespace FourPlaces
         {
             // Handle when your app resumes
         }
+      
     }
 }

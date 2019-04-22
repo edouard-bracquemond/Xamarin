@@ -14,11 +14,15 @@ namespace FourPlaces {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\DetailPage.xaml")]
-    public partial class DetailPage : global::Storm.Mvvm.Forms.BaseContentPage {
+    public partial class DetailPage : global::Xamarin.Forms.TabbedPage {
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView Comments;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(DetailPage));
+            Comments = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "Comments");
         }
     }
 }

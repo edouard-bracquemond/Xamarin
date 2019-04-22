@@ -1,9 +1,11 @@
 using Newtonsoft.Json;
 
-namespace TD.Api.Dtos
+namespace FourPlaces.Models
 {
     public class UserItem
     {
+        
+
         [JsonProperty("id")]
         public int Id { get; set; }
         
@@ -18,5 +20,8 @@ namespace TD.Api.Dtos
         
         [JsonProperty("image_id")]
         public int? ImageId { get; set; }
+
+        
+       
     }
 }

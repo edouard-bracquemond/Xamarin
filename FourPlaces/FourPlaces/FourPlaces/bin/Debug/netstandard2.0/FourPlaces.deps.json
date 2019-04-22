@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "706fb282c5d9001354b0759fad0700d48c4f5f4d"
+    "signature": "d344171f14c683c855ec8858e1f63a9484e08ec6"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,12 +11,14 @@
         "dependencies": {
           "MonkeyCache.SQLite": "1.2.0-beta",
           "NETStandard.Library": "2.0.3",
-          "Newtonsoft.Json": "12.0.1",
+          "Newtonsoft.Json": "12.0.2-beta1",
           "Storm.Mvvm.Forms": "2.1.0",
-          "Xam.Plugin.Geolocator": "4.5.0.6",
+          "Xam.Plugin.Connectivity": "4.0.0.190-beta",
+          "Xam.Plugin.Geolocator": "4.5.4-beta",
           "Xam.Plugin.Media": "4.0.1.5",
           "Xam.Plugins.Settings": "3.1.1",
-          "Xamarin.Forms": "3.4.0.1008975"
+          "Xamarin.Forms": "3.6.0.344457",
+          "Xamarin.Forms.Maps": "3.6.0.344457"
         },
         "runtime": {
           "FourPlaces.dll": {}
@@ -25,7 +27,7 @@
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "MonkeyCache/1.2.0-beta": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.1"
+          "Newtonsoft.Json": "12.0.2-beta1"
         },
         "runtime": {
           "lib/netstandard2.0/MonkeyCache.dll": {
@@ -37,7 +39,7 @@
       "MonkeyCache.SQLite/1.2.0-beta": {
         "dependencies": {
           "MonkeyCache": "1.2.0-beta",
-          "Newtonsoft.Json": "12.0.1",
+          "Newtonsoft.Json": "12.0.2-beta1",
           "sqlite-net-pcl": "1.5.231"
         },
         "runtime": {
@@ -52,11 +54,11 @@
           "Microsoft.NETCore.Platforms": "1.1.0"
         }
       },
-      "Newtonsoft.Json/12.0.1": {
+      "Newtonsoft.Json/12.0.2-beta1": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.1.22727"
+            "fileVersion": "12.0.2.23131"
           }
         }
       },
@@ -109,7 +111,7 @@
       },
       "Storm.Mvvm.Forms/2.1.0": {
         "dependencies": {
-          "Xamarin.Forms": "3.4.0.1008975"
+          "Xamarin.Forms": "3.6.0.344457"
         },
         "runtime": {
           "lib/netstandard2.0/Storm.Mvvm.Forms.dll": {
@@ -118,7 +120,22 @@
           }
         }
       },
-      "Xam.Plugin.Geolocator/4.5.0.6": {
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Connectivity.Abstractions.dll": {
+            "assemblyVersion": "4.0.0.190",
+            "fileVersion": "4.0.0.190"
+          },
+          "lib/netstandard1.0/Plugin.Connectivity.dll": {
+            "assemblyVersion": "4.0.0.190",
+            "fileVersion": "4.0.0.190"
+          }
+        }
+      },
+      "Xam.Plugin.Geolocator/4.5.4-beta": {
         "runtime": {
           "lib/netstandard2.0/Plugin.Geolocator.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -152,7 +169,7 @@
           }
         }
       },
-      "Xamarin.Forms/3.4.0.1008975": {
+      "Xamarin.Forms/3.6.0.344457": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -163,6 +180,17 @@
             "fileVersion": "1.0.0.0"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Xamarin.Forms.Maps/3.6.0.344457": {
+        "dependencies": {
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.Maps.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
           }
@@ -204,12 +232,12 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.1": {
+    "Newtonsoft.Json/12.0.2-beta1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
-      "path": "newtonsoft.json/12.0.1",
-      "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
+      "sha512": "sha512-N60ieuCbsKGsyyspN8urq8tmNT9RitCbPoZBuyD2NKHgQ9O42kGVuQJ+Bmr8RUb7xbpKLTvVAu2vX562Q/G/oQ==",
+      "path": "newtonsoft.json/12.0.2-beta1",
+      "hashPath": "newtonsoft.json.12.0.2-beta1.nupkg.sha512"
     },
     "Plugin.Permissions/3.0.0.12": {
       "type": "package",
@@ -246,12 +274,19 @@
       "path": "storm.mvvm.forms/2.1.0",
       "hashPath": "storm.mvvm.forms.2.1.0.nupkg.sha512"
     },
-    "Xam.Plugin.Geolocator/4.5.0.6": {
+    "Xam.Plugin.Connectivity/4.0.0.190-beta": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Ro7peBDxsDXPc7J7yLx0ekAcXIfVTAXj/rXiBKiTgZ4Lm7KZJIU8PXOCcI4JztzT3MQrL8Rmka48il/ix0pwoA==",
-      "path": "xam.plugin.geolocator/4.5.0.6",
-      "hashPath": "xam.plugin.geolocator.4.5.0.6.nupkg.sha512"
+      "sha512": "sha512-p9PofTKArw6wHg45GpRRE+xDioJGOSAgA+X+E+vUf1CFZmTzeOO3YCmFdP7/W8x6f85Z50zugXGoszEGJx4QSg==",
+      "path": "xam.plugin.connectivity/4.0.0.190-beta",
+      "hashPath": "xam.plugin.connectivity.4.0.0.190-beta.nupkg.sha512"
+    },
+    "Xam.Plugin.Geolocator/4.5.4-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-55UvU7GEbdOMcpoTuqMLA+l3p0ZQJtxTWxJxhhMEODoCmxrQxNMU/j/HSnp5NQ2BrYVashlm7TMf1TBEISlpCg==",
+      "path": "xam.plugin.geolocator/4.5.4-beta",
+      "hashPath": "xam.plugin.geolocator.4.5.4-beta.nupkg.sha512"
     },
     "Xam.Plugin.Media/4.0.1.5": {
       "type": "package",
@@ -267,12 +302,19 @@
       "path": "xam.plugins.settings/3.1.1",
       "hashPath": "xam.plugins.settings.3.1.1.nupkg.sha512"
     },
-    "Xamarin.Forms/3.4.0.1008975": {
+    "Xamarin.Forms/3.6.0.344457": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tM9syeev45u92OFENGjq+Zw8WiEwLJFiXe317XpL9SY2RRk9sm2fc1lDVjzwz0da+5ZP5fi24NAPsPQdxBdMwQ==",
-      "path": "xamarin.forms/3.4.0.1008975",
-      "hashPath": "xamarin.forms.3.4.0.1008975.nupkg.sha512"
+      "sha512": "sha512-7IffIKgL0fmgbfCLKzXaFKJ7uOueKiz/BIgmAG1Z5WMn+vMKeALe5GgRs3Uddo670VzllIHWkNEZD3lG+e02bw==",
+      "path": "xamarin.forms/3.6.0.344457",
+      "hashPath": "xamarin.forms.3.6.0.344457.nupkg.sha512"
+    },
+    "Xamarin.Forms.Maps/3.6.0.344457": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kxd9Nt+nMZhYbd7pH66qdfvXGtP1cK0SefmBfXAvetamhE12MgLli2pVdp96VpPm/JZ/ghvc/4YHzK7maxoSFA==",
+      "path": "xamarin.forms.maps/3.6.0.344457",
+      "hashPath": "xamarin.forms.maps.3.6.0.344457.nupkg.sha512"
     }
   }
 }

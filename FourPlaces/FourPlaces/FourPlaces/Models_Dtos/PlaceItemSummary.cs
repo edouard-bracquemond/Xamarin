@@ -1,10 +1,12 @@
 using System;
+using MonkeyCache.SQLite;
 using Newtonsoft.Json;
+using Plugin.Geolocator.Abstractions;
 
-namespace TD.Api.Dtos
+namespace FourPlaces.Models
 {
-	public class PlaceItemSummary
-	{
+	public class PlaceItemSummary : IComparable<PlaceItemSummary>
+    {
 		[JsonProperty("id")]
 		public int Id { get; set; }
 		
@@ -23,9 +25,29 @@ namespace TD.Api.Dtos
 		[JsonProperty("longitude")]
 		public double Longitude { get; set; }
 
-        public static explicit operator PlaceItemSummary(EventArgs v)
+        public string ImageURL { get; set; }
+        public double Distance { get; set; }
+
+        public PlaceItemSummary(int id, string title, string description, int image, double longitude, double latitude)
         {
-            throw new NotImplementedException();
+            Id = id;
+            Title = title;
+            Description = description;
+            ImageId = image;
+            Latitude = latitude;
+            Longitude = longitude;
+            Distance = 1.0;
+        }
+        public void RelativePosition()
+        {
+            Distance = Barrel.Current.Get<Position>(key: "Position").CalculateDistance(new Position(Latitude, Longitude));
+        }
+        public int CompareTo(PlaceItemSummary other)
+        {
+            if (other == null)
+                return 1;
+            else
+                return this.Distance.CompareTo(other.Distance);
         }
     }
 }

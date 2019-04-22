@@ -35,10 +35,23 @@
         <Entry Text="{Binding FirstName}"
                     Placeholder="prenom"
                     Margin="8"/>
-        <Label Text="{Binding Error}"
+        <Label Text="Photo de profil"
+                   FontSize="18"
+                   Margin="8"
+               />
+        <Button Text="Prendre une photo"
+                    Command="{Binding TakeClicked}"
+                    Margin="8"
+                />
+        <Button Text="Choisir une image"
+                Command="{Binding PickClicked}"
+                Margin="8"
+               />
+            <Label Text="{Binding Error}"
                TextColor="Red"
                FontSize="18"
                Margin="8"/>
+        
         <Button Text="Valider"
                     Command="{Binding RegistrationClicked}"
                     Margin="8"/>

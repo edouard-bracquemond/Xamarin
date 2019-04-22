@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
-
-namespace Common.Api.Dtos
+namespace FourPlaces.Models
 {
     public class Response
     {

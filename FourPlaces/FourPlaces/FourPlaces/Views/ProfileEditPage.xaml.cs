@@ -17,7 +17,7 @@ namespace FourPlaces
 		public ProfileEditPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new ProfileEditViewModel();
+            BindingContext = new ProfileEditViewModel(Navigation);
         }
 	}
 }

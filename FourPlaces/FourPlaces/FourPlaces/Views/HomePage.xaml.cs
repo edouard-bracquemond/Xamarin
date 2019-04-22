@@ -6,9 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TD.Api.Dtos;
+
 
 using Xamarin.Forms.Xaml;
+using FourPlaces.Models;
 
 namespace FourPlaces
 {
@@ -19,12 +20,18 @@ namespace FourPlaces
         {
             InitializeComponent();
             BindingContext = new HomeViewModel(Navigation);
+            
         }
-      
-       
-        
+
+        private async void ListPlaces_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            PlaceItemSummary place = (PlaceItemSummary)e.Item;
+            await Navigation.PushAsync(new DetailPage(await Service.GetPlaceService(place.Id)));
+        }
 
 
-        
+
+
+
     }
 }

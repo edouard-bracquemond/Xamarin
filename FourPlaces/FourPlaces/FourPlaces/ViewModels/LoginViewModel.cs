@@ -1,4 +1,5 @@
-﻿using Storm.Mvvm;
+﻿using MonkeyCache.SQLite;
+using Storm.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,10 @@ namespace FourPlaces.ViewModels
     {
         public ICommand ConnectionClicked{ set; get; }
         public ICommand RegisterClicked { set; get; }
-        private string _password;
-        private string _email;
+        private string _password="";
+        private string _email="";
         private string _error;
-        INavigation navigation { get; set; }
+        INavigation Navigation { get; set; }
         public string Password
         {
             get => _password;
@@ -34,20 +35,26 @@ namespace FourPlaces.ViewModels
         }
         public LoginViewModel(INavigation navigation)
         {
-            this.navigation = navigation;
+            this.Navigation = navigation;
             this.ConnectionClicked = new Command(async () => await GotoHome());
             this.RegisterClicked = new Command(async () => await GotoRegister());
         }
         public async Task GotoRegister()
         {
-            await navigation.PushAsync(new RegisterPage());
+            await Navigation.PushAsync(new RegisterPage());
         }
         public async Task GotoHome()
         {
             Error = "";
+            if (Barrel.Current.Exists(key: "Login")&&Email!=""&&Password!="")
+            {
+                
+                Barrel.Current.Empty(key: "Login");
+                Barrel.Current.Empty(key: "User");
+            }
             if (await Service.LoginService(Email, Password))
             {
-                await navigation.PushAsync(new HomePage());
+                await Navigation.PushAsync(new HomePage());
             }
             else
             {

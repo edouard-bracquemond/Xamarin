@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace TD.Api.Dtos
+namespace FourPlaces.Models
 {
 	public class RegisterRequest
 	{

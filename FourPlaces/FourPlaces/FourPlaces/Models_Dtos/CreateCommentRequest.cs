@@ -1,10 +1,15 @@
 using Newtonsoft.Json;
 
-namespace TD.Api.Dtos
+namespace FourPlaces.Models
 {
 	public class CreateCommentRequest
 	{
-		[JsonProperty("text")]
+        public CreateCommentRequest(string text)
+        {
+            Text = text;
+        }
+
+        [JsonProperty("text")]
 		public string Text { get; set; }
 	}
 }

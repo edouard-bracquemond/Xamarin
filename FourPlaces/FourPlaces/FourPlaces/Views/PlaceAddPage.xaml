@@ -9,10 +9,51 @@
                       x:DataType="vm:PlaceAddViewModel"
                       Title="{StaticResource title}"
                       >
-<StackLayout Orientation="Vertical">
-        <Label Text="Lieux"
-            HorizontalOptions="CenterAndExpand" 
-            Margin="0,30"
-            FontSize="24"/>
-    </StackLayout>
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
+
+
+            <Label Text="Titre"
+                   FontSize="18"
+                   Margin="8"/>
+            <Entry Text="{Binding Title}"
+                  
+                    Margin="8"/>
+            <Label Text="Description"
+                   FontSize="18"
+                   Margin="8"/>
+            <Editor Text="{Binding Description}"
+                    
+                    Margin="8"/>
+            <Label Text="Latitude"
+                   FontSize="18"
+                   Margin="8"/>
+            <Entry Text="{Binding Latitude}"
+                    MaxLength="100"
+                    Margin="8"/>
+            <Label Text="Longitude"
+                   FontSize="18"
+                   Margin="8"/>
+            <Entry Text="{Binding Longitude}"
+                  
+                    Margin="8"/>
+        
+            <Button Text="Prendre une photo"
+                    Command="{Binding TakeClicked}"
+                    Margin="8"
+                />
+            <Button Text="Choisir une image"
+                Command="{Binding PickClicked}"
+                Margin="8"
+               />
+            <Label Text="{Binding Error}"
+                   TextColor="Red"
+                   FontSize="18"
+                   Margin="8"/>
+            <Button Text="Valider"
+                    Command="{Binding OkClicked}"
+                    Margin="8"
+                    />
+        </StackLayout>
+    </ScrollView>
 </mvvm:BaseContentPage>

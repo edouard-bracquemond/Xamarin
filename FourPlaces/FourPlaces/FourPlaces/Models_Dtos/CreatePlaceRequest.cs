@@ -1,10 +1,19 @@
 using Newtonsoft.Json;
 
-namespace TD.Api.Dtos
+namespace FourPlaces.Models
 {
 	public class CreatePlaceRequest
 	{
-		[JsonProperty("title")]
+        public CreatePlaceRequest(string title, string description, int imageId, double latitude, double longitude)
+        {
+            Title = title;
+            Description = description;
+            ImageId = imageId;
+            Latitude = latitude;
+            Longitude = longitude;
+        }
+
+        [JsonProperty("title")]
 		public string Title { get; set; }
 		
 		[JsonProperty("description")]

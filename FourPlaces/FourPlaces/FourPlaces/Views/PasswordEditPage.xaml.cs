@@ -17,7 +17,7 @@ namespace FourPlaces
 		public PasswordEditPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new PasswordEditViewModel();
+            BindingContext = new PasswordEditViewModel(Navigation);
         }
 	}
 }

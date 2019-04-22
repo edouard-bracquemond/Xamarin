@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace TD.Api.Dtos
+namespace FourPlaces.Models
 {
     public class UpdateProfileRequest
     {
@@ -12,5 +12,12 @@ namespace TD.Api.Dtos
         
         [JsonProperty("image_id")]
         public int? ImageId { get; set; }
+
+        public UpdateProfileRequest(string firstname, string lastname, int? imageId)
+        {
+            this.FirstName = firstname;
+            this.LastName = lastname;
+            this.ImageId = imageId;
+        }
     }
 }

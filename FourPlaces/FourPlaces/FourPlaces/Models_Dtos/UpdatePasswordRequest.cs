@@ -1,9 +1,15 @@
 using Newtonsoft.Json;
 
-namespace TD.Api.Dtos
+namespace FourPlaces.Models
 {
     public class UpdatePasswordRequest
     {
+        public UpdatePasswordRequest(string oldPassword, string newPassword)
+        {
+            OldPassword = oldPassword;
+            NewPassword = newPassword;
+        }
+
         [JsonProperty("old_password")]
         public string OldPassword { get; set; }
         
