@@ -57,11 +57,11 @@ namespace FourPlaces.ViewModels
               ListPlaces places = await Service.GetPlacesService();
               if (places != null)
               {
-                Console.WriteLine("YEP");
+               
                   foreach (PlaceItemSummary place in places.GetPlaces())
                   {
                       place.ImageURL =Service.URL + "images/" + place.ImageId;
-                    Console.WriteLine(place.ImageURL);
+                   
                   }
                   Position position = await Service.GetCurrentLocation();
 
@@ -78,7 +78,7 @@ namespace FourPlaces.ViewModels
                       }
               else
               {
-                Console.WriteLine("NOP");
+          
                  _error = "Problème";
               }
         }

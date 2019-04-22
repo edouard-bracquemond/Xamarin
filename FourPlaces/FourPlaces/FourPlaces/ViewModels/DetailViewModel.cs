@@ -56,8 +56,13 @@ namespace FourPlaces.ViewModels
             _latitude = placeS.Latitude;
             _imageURL = Service.URL + "images/" + placeS.ImageId;
             Comments = new List<CommentItem>(placeS.Comments);
-            
-                position = new Position(Latitude, Longitude);
+            foreach (CommentItem c in Comments)
+            {
+               c.ImageURL = Service.URL + "images/" + c.Author.ImageId;
+
+            }
+
+            position = new Position(Latitude, Longitude);
             Map = new Map();
             Map.MoveToRegion(MapSpan.FromCenterAndRadius(position,Distance.FromKilometers(150)));
            
@@ -76,6 +81,11 @@ namespace FourPlaces.ViewModels
             await base.OnResume();
             place = await Service.GetPlaceService(_id);
             Comments = place.Comments;
+            foreach (CommentItem c in Comments)
+            {
+                c.ImageURL = Service.URL + "images/" + c.Author.ImageId;
+
+            }
             position = new Position(Latitude, Longitude);
             var pin = new Pin
             {

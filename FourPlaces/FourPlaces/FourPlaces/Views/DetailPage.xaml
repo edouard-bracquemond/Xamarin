@@ -84,8 +84,11 @@
                                            LineBreakMode="WordWrap" 
                                            FontSize="16"
                                            />
+                                                    <Image Source="{Binding ImageURL}"
+                                               HeightRequest="30"
+                                           WidthRequest="30"/>
 
-                                    <StackLayout Orientation="Vertical">
+                                                    <StackLayout Orientation="Vertical">
                                         <Label Text="{Binding Text}" 
                                            TextColor="Black" 
                                            LineBreakMode="WordWrap" 
